@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('rooms',HotelController::class);
+Route::post('/rooms/{id}',HotelController::class,'update');

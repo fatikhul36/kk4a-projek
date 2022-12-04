@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->integer('roomnumber');
-            $table->string('roomtype');
-            $table->string('bookedby');
-            $table->string('status');
+            $table->string('name');
+            $table->string('location');
+            $table->integer('rating');
+            $table->integer('roomAvailable');
             $table->timestamps();
-    });
+        });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('hotels');
     }
 };
